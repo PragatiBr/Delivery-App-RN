@@ -86,7 +86,6 @@ const styles = StyleSheet.create({
   footerLink: {
     color: "slateblue",
     fontSize: 18,
-    
   },
   footerText: {
     fontSize: 18,
