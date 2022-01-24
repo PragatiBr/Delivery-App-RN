@@ -1,18 +1,22 @@
 import React, { Component } from "react";
-import { View, ScrollView } from 'react-native';
+import { ScrollView, LogBox } from 'react-native';
 import CategoryItem from "../components/CategoryItem";
 import HomeHeader from "../components/HomeHeader";
+import RestaurantList from "../components/RestaurantList";
 import SliderScreen from "../components/SliderScreen";
 
 class HomeScreen extends Component {
-  
+  componentDidMount() {
+    LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
+  }
   render() {
     return (
-      <View>
+      <ScrollView>
         <HomeHeader />
         <CategoryItem />
         <SliderScreen />
-      </View>
+        <RestaurantList onPress={this.props.navigation} />
+      </ScrollView>
     );
   }
 }

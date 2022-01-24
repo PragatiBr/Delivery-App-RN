@@ -7,31 +7,37 @@ class CategoryItem extends Component {
       {
         id: 1,
         name: "Burger",
+        amount: '$ 40',
         image: require('../assets/images/burger.jpg')
       },
       {
         id: 2,
         name: "Pizza",
+        amount: '$ 20',
         image: require("../assets/images/pizza.jpg")
       },
       {
         id: 3,
         name: "Sandwich",
+        amount: '$ 40',
         image: require("../assets/images/sandwich.jpg")
       },
       {
         id: 4,
         name: "Thali",
+        amount: '$ 60',
         image: require('../assets/images/thali.jpg')
       },
       {
         id: 5,
         name: "Pasta",
+        amount: '$ 50',
         image: require('../assets/images/pasta.jpg')
       },
       {
         id: 6,
         name: "Noodles",
+        amount: '$ 60',
         image: require('../assets/images/noodles.jpg')
       }
     ]

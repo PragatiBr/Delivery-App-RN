@@ -7,12 +7,16 @@ import Registration from "./screens/RegistrationScreen";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from "./screens/HomeScreen";
 import ForgotPassword from "./screens/ForgotPassword";
+// import Ionicons from 'react-native-vector-icons';
+// import CartScreen from "./screens/CartScreen";
+// import AccountScreen from "./screens/AccountScreen";
+import RestaurantDetailsScreen from "./screens/RestaurantDetailsScreen";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 class App extends Component {
-  componentDidMount(){
+  componentDidMount() {
     SplashScreen.hide();
   }
   render() {
@@ -34,10 +38,15 @@ class App extends Component {
             component={ForgotPassword}
             options={{ headerShown: false }}
           />
-          <Stack.Screen
+          <Stack.Screen 
             name="Home"
             component={HomeScreen}
             options={{ headerShown: false }}
+          />
+          <Stack.Screen 
+            name="Details"
+            component={RestaurantDetailsScreen}
+            //options={{ headerShown: false }}
           />
         </Stack.Navigator>
       </NavigationContainer>

@@ -4,20 +4,25 @@ import Icon from "react-native-vector-icons/Feather";
 
 class HomeHeader extends Component {
   render() {
-    const { headerContainer, textInputStyle, iconStyle } = styles;
+    const { headerContainer, textInputStyle, iconStyle, searchContainer } = styles;
     return (
-      <View style={headerContainer}>
-        <Image
-          source={{ uri: 'https://media-exp1.licdn.com/dms/image/C510BAQFFEDwhEhH1nw/company-logo_200_200/0/1542181185790?e=2159024400&v=beta&t=-fCrx1xapE6g1VkcFEFGLHFUrkY_cHvKDiumjeOzKKE' }}
-          style={{ height: 50, width: 100 }}
-        />
-        <TextInput
-          placeholder="Search"
-          style={textInputStyle}
-        />
+      <View>
+        <View style={headerContainer}>
+          <Image
+            source={{ uri: 'https://media-exp1.licdn.com/dms/image/C510BAQFFEDwhEhH1nw/company-logo_200_200/0/1542181185790?e=2159024400&v=beta&t=-fCrx1xapE6g1VkcFEFGLHFUrkY_cHvKDiumjeOzKKE' }}
+            style={{ height: 50, width: 100 }}
+          />
+          <Icon name="shopping-cart" size={30} style={iconStyle} />
+        </View>
+        <View style={searchContainer}>
         <TouchableOpacity>
           <Icon name="search" size={30} style={iconStyle} />
-        </TouchableOpacity>
+          </TouchableOpacity>
+          <TextInput
+            placeholder="Restaurant name, causine, or a Dish.."
+            style={textInputStyle}
+          />
+        </View>
       </View>
     );
   }
@@ -42,7 +47,7 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   headerContainer: {
-    height: 75,
+    height: 70,
     backgroundColor: 'white',
     paddingHorizontal: 20,
     paddingVertical: 10,
@@ -50,9 +55,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   textInputStyle: {
-    width: 180,
-    height: 35,
-    borderBottomWidth: 1,
+    width: 250,
+    height: 40,
     paddingLeft: 10,
     marginVertical: 6,
     marginLeft: 10,
@@ -62,6 +66,14 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginVertical: 10,
     color: 'slateblue',
+  },
+  searchContainer: {
+    flexDirection: 'row',
+    paddingLeft: 20,
+    alignItems: 'flex-start',
+    margin: 10,
+    backgroundColor: 'white',
+    borderRadius: 12,
   },
 });
 
