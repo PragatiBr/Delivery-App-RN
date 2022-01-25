@@ -158,7 +158,7 @@ export default class RestaurantMenu extends Component {
 
 const Button = () => {
   return (
-    <View style={styles.buttonStyle}>
+    <View style={styles.buttonViewStyle}>
       <TouchableOpacity>
         <Icon name="minus" size={20} style={{ color: 'black' }} />
       </TouchableOpacity>
@@ -196,7 +196,7 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     backgroundColor: 'silver'
   },
-  buttonStyle:{
+  buttonViewStyle:{
     borderWidth: 1,  
     flexDirection: 'row', 
     width: 80, 

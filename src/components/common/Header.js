@@ -3,13 +3,13 @@ import React from 'react';
 import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 
-const Header = ({ headerText, headerSubText, headerImage, iconName, navigation }) => {
+const Header = ({ headerText, headerSubText, headerImage, iconName, onPress }) => {
 
   const { textStyles, viewStyle, subTextStyle } = styles;
 
   return (
     <View style={viewStyle}>
-      <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+      <TouchableOpacity onPress={() => onPress.navigate('Login')}>
         <Feather name={iconName} size={30} color="black"  />
       </TouchableOpacity>
       <Image source={{ uri:headerImage }} style={styles.imageStyle} />

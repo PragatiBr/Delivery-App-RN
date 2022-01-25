@@ -22,7 +22,8 @@ class ForgotPassword extends Component {
         <Header
           iconName="chevron-left" 
           headerText="FORGOT PASSWORD"  
-          headerImage="https://media-exp1.licdn.com/dms/image/C510BAQFFEDwhEhH1nw/company-logo_200_200/0/1542181185790?e=2159024400&v=beta&t=-fCrx1xapE6g1VkcFEFGLHFUrkY_cHvKDiumjeOzKKE" 
+          headerImage="https://media-exp1.licdn.com/dms/image/C510BAQFFEDwhEhH1nw/company-logo_200_200/0/1542181185790?e=2159024400&v=beta&t=-fCrx1xapE6g1VkcFEFGLHFUrkY_cHvKDiumjeOzKKE"
+          onPress={this.props.navigation} 
         />
         <View style={styles.containerStyle}>
           <Text style={styles.textStyle}>Email</Text>
