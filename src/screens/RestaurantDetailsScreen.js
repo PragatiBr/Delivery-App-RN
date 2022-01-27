@@ -77,7 +77,7 @@ export default class RestaurantDetailsScreen extends Component {
             <View style={{ flexDirection: 'row', paddingBottom: 10 }}>
               <Text style={itemTextStyle}><Icon name="star" style={{ color: 'orange' }} /> 4.3</Text>
               <Text style={itemTextStyle}><ClockIcon name="clock" /> 20 MINS</Text>
-              <Text style={itemTextStyle}><Icon name="credit-card" /> $30 FOR TWO</Text>
+              <Text style={itemTextStyle}><Icon name="credit-card" />{'\u20B940'}</Text>
             </View>
           </View>
         </View>
@@ -99,7 +99,7 @@ export default class RestaurantDetailsScreen extends Component {
           showsHorizontalScrollIndicator={false}
         />
         {/* Menu Section */}
-        <RestaurantMenu />
+        <RestaurantMenu onPress={this.props.navigation} />
       </ScrollView>
     );
   }

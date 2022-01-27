@@ -8,7 +8,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from "./screens/HomeScreen";
 import ForgotPassword from "./screens/ForgotPassword";
 // import Ionicons from 'react-native-vector-icons';
-// import CartScreen from "./screens/CartScreen";
+import CartScreen from "./screens/CartScreen";
 // import AccountScreen from "./screens/AccountScreen";
 import RestaurantDetailsScreen from "./screens/RestaurantDetailsScreen";
 import CategoryItems from "./screens/CategoryItems";
@@ -29,31 +29,32 @@ class App extends Component {
           <Stack.Screen
             name="Login"
             component={LoginForm}
-            //options={{ headerShown: false }}
           />
           <Stack.Screen
             name="Register"
             component={Registration}
-            //options={{ headerShown: false }}
           />
           <Stack.Screen
             name="ForgotPassword"
             component={ForgotPassword}
-            //options={{ headerShown: false }}
           />
           <Stack.Screen 
             name="Home"
             component={HomeScreen}
-            //options={{ headerShown: false }}
           />
           <Stack.Screen 
             name="Details"
             component={RestaurantDetailsScreen}
-            //options={{ headerShown: false }}
+            options={{ headerShown: true }}
           />
           <Stack.Screen 
             name="Category"
             component={CategoryItems}
+          />
+          <Stack.Screen 
+            name="Cart"
+            component={CartScreen}
+            options={{ headerShown: true }}
           />
         </Stack.Navigator>
       </NavigationContainer>

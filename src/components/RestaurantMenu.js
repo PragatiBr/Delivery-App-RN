@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, SectionList, Image, TouchableOpacity, LogBox } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
-import Snackbar from "react-native-snackbar-component";
-import RCTModalHostViewNativeComponent from "react-native/Libraries/Modal/RCTModalHostViewNativeComponent";
+import RBSheet from "react-native-raw-bottom-sheet";
+import AddToCart from "./AddToCartBottomSheet";
+
 
 const pizzaSection = [
   {
@@ -120,7 +121,6 @@ const dessertsSection = [
   }
 ];
 
-
 export default class RestaurantMenu extends Component {
 
   componentDidMount() {
@@ -128,80 +128,80 @@ export default class RestaurantMenu extends Component {
   }
 
   state = { showSnackBar: false };
-  
+
   renderItems = (itemData) => {
     return (
-      <View style={{flexDirection:'row', justifyContent: 'space-evenly', borderBottomWidth: 1, borderColor: 'silver', marginVertical: 5, paddingBottom: 10 }}>
+      <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', borderBottomWidth: 1, borderColor: 'silver', marginVertical: 5, paddingBottom: 10 }}>
         <Image source={itemData.item.image} style={{ height: 80, width: 100, borderRadius: 10 }} />
-          <View style={{ flexDirection:'column', width: 120 }}>
-            <Text style={styles.itemTextStyle}>{itemData.item.name}</Text>
-            <Text numberOfLines={2} ellipsizeMode="tail">{itemData.item.description}</Text>
-            <Text>{itemData.item.amount}</Text>
-          </View>
-        <Button onPress={this.setState({ showSnackBar: true })} />
+        <View style={{ flexDirection: 'column', width: 120 }}>
+          <Text style={styles.itemTextStyle}>{itemData.item.name}</Text>
+          <Text numberOfLines={2} ellipsizeMode="tail">{itemData.item.description}</Text>
+          <Text>{itemData.item.amount}</Text>
+        </View>
+        <View style={styles.buttonViewStyle}>
+          <TouchableOpacity>
+            <Icon name="minus" size={20} style={{ color: 'black' }} />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => this.RBSheet.open()}>
+            <Icon name="plus" size={20} style={{ color: 'black' }} />
+          </TouchableOpacity>
+        </View>
       </View>
     );
   }
-
 
   render() {
     const { containerStyle, textStyle, sectionTitleStyle } = styles;
     return (
       <View style={containerStyle}>
         <Text style={textStyle}>MENU</Text>
-          <SectionList
-            sections={[...pizzaSection, ...pastaSection, ...snacksSection, ...dessertsSection]}
-            keyExtractor={item => item.id}
-            renderItem={item => this.renderItems(item)}
-            renderSectionHeader={({ section: { title } }) => (
-              <Text style={sectionTitleStyle}>{title}</Text>
-            )}
-          />
-          <Snackbar 
-            visible={this.state.showSnackBar} 
-            textMessage="Hello There!" 
-            actionHandler={()=>{console.log("snackbar button clicked!")}} 
-            actionText="let's go"
-          /> 
+        <SectionList
+          sections={[...pizzaSection, ...pastaSection, ...snacksSection, ...dessertsSection]}
+          keyExtractor={item => item.id}
+          renderItem={item => this.renderItems(item)}
+          renderSectionHeader={({ section: { title } }) => (
+            <Text style={sectionTitleStyle}>{title}</Text>
+          )}
+        />
+        <RBSheet
+          ref={ref => {
+            this.RBSheet = ref;
+          }}
+          height={60}
+          openDuration={250}
+          customStyles={{
+            container: {
+              backgroundColor: 'green',
+            },
+          }}
+        >
+          <AddToCart onPress={this.props.navigation} />
+        </RBSheet>
       </View>
     );
   }
 }
 
-
-const Button = ({ onPress }) => {
-  return (
-    <View style={styles.buttonViewStyle}>
-      <TouchableOpacity>
-        <Icon name="minus" size={20} style={{ color: 'black' }} />
-      </TouchableOpacity>
-      <TouchableOpacity onPress={onPress}>
-        <Icon name="plus" size={20} style={{ color: 'black' }} />
-      </TouchableOpacity>
-    </View>
-  );
-}
-
 const styles = StyleSheet.create({
-  containerStyle:{
+  containerStyle: {
     marginVertical: 20,
     backgroundColor: 'white',
     paddingTop: 10,
   },
-  textStyle:{
+  textStyle: {
     fontSize: 25,
     color: 'slateblue',
     fontWeight: 'bold',
     marginLeft: 20,
   },
-  itemTextStyle:{
+  itemTextStyle: {
     paddingTop: 10,
     fontSize: 18,
-    color:'black',
+    color: 'black',
     fontWeight: '600',
   },
-  sectionTitleStyle:{
-    marginVertical:10,
+  sectionTitleStyle: {
+    marginVertical: 10,
     fontSize: 20,
     fontWeight: '600',
     color: 'black',
@@ -209,14 +209,14 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     backgroundColor: 'silver'
   },
-  buttonViewStyle:{
-    borderWidth: 1,  
-    flexDirection: 'row', 
-    width: 80, 
-    height: 30, 
-    alignItems:'center', 
-    justifyContent:'space-around', 
-    marginTop:20, 
+  buttonViewStyle: {
+    borderWidth: 1,
+    flexDirection: 'row',
+    width: 80,
+    height: 30,
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    marginTop: 20,
     borderColor: 'silver',
   },
 });
