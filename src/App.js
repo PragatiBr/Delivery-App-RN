@@ -11,6 +11,7 @@ import ForgotPassword from "./screens/ForgotPassword";
 // import CartScreen from "./screens/CartScreen";
 // import AccountScreen from "./screens/AccountScreen";
 import RestaurantDetailsScreen from "./screens/RestaurantDetailsScreen";
+import CategoryItems from "./screens/CategoryItems";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -22,31 +23,37 @@ class App extends Component {
   render() {
     return (
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator
+          screenOptions={{ headerShown: false }}
+        >
           <Stack.Screen
             name="Login"
             component={LoginForm}
-            options={{ headerShown: false }}
+            //options={{ headerShown: false }}
           />
           <Stack.Screen
             name="Register"
             component={Registration}
-            options={{ headerShown: false }}
+            //options={{ headerShown: false }}
           />
           <Stack.Screen
             name="ForgotPassword"
             component={ForgotPassword}
-            options={{ headerShown: false }}
+            //options={{ headerShown: false }}
           />
           <Stack.Screen 
             name="Home"
             component={HomeScreen}
-            options={{ headerShown: false }}
+            //options={{ headerShown: false }}
           />
           <Stack.Screen 
             name="Details"
             component={RestaurantDetailsScreen}
             //options={{ headerShown: false }}
+          />
+          <Stack.Screen 
+            name="Category"
+            component={CategoryItems}
           />
         </Stack.Navigator>
       </NavigationContainer>

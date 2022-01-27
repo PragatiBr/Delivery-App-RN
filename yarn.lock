@@ -5772,6 +5772,11 @@
     "jscodeshift" "^0.11.0"
     "nullthrows" "^1.1.1"
 
+"react-native-dashed-line@^1.1.0":
+  "integrity" "sha512-eO1YxTSYuE/1eaOO/mnV/DSQ45e7LQ690D6iv24Oyl9FcZFFiIIwoCurHnS+myJQvydppsshY1d0WwaQroNx/Q=="
+  "resolved" "https://registry.npmjs.org/react-native-dashed-line/-/react-native-dashed-line-1.1.0.tgz"
+  "version" "1.1.0"
+
 "react-native-gesture-handler@^2.2.0":
   "integrity" "sha512-WF25CNgn164bF9juW8N/jICIFXiEOgsxCuY7DRlnFdiH5ZfvMYtZHRC+zr1fFMap2ty1f2HWDQNVVSo0FDXP4A=="
   "resolved" "https://registry.npmjs.org/react-native-gesture-handler/-/react-native-gesture-handler-2.2.0.tgz"
@@ -5818,10 +5823,12 @@
     "lodash.isequal" "^4.5.0"
     "memoize-one" "^6.0.0"
 
-"react-native-snackbar@^2.4.0":
-  "integrity" "sha512-xEDIDxw0ubBHrsvzaMfrZlFoy+ai1WEJZQwyAsG55fqYxUfQM20h+V4v25u+/H/YKY7ZCRMdCZ8zB5JOnbvCQw=="
-  "resolved" "https://registry.npmjs.org/react-native-snackbar/-/react-native-snackbar-2.4.0.tgz"
-  "version" "2.4.0"
+"react-native-snackbar-component@^1.1.12":
+  "integrity" "sha512-uF9Aw3lWVtFOxrd09YCXteTvIxBZ0IrwEluhhTsmNqWf3fYeJ7LbERVXYw/2p39H9tQUFGkrJcrkvDcQcUa3Pg=="
+  "resolved" "https://registry.npmjs.org/react-native-snackbar-component/-/react-native-snackbar-component-1.1.12.tgz"
+  "version" "1.1.12"
+  dependencies:
+    "prop-types" "^15.6.0"
 
 "react-native-snap-carousel@latest":
   "integrity" "sha512-xWEGusacIgK1YaDXLi7Gao2+ISLoGPVEBR8fcMf4tOOJQufutlNwkoLu0l6B8Qgsrre0nTxoVZikRgGRDWlLaQ=="
@@ -5850,7 +5857,7 @@
     "prop-types" "^15.7.2"
     "yargs" "^16.1.1"
 
-"react-native@*", "react-native@>=0.57.0", "react-native@>=0.60", "react-native@0.67.0":
+"react-native@*", "react-native@>=0.57.0", "react-native@0.67.0":
   "integrity" "sha512-LTrLbZhapgsF0J1fgKvkMVealNKVZ+Fp3XWVFHWmglVQvdmALdcafZR2Plvhe9IH8KJddj3LAU9nV3rHot7q4Q=="
   "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.67.0.tgz"
   "version" "0.67.0"
@@ -5917,7 +5924,7 @@
     "react-shallow-renderer" "^16.13.1"
     "scheduler" "^0.20.2"
 
-"react@*", "react@^16.0.0 || ^17.0.0", "react@^16.8.0 || ^17.0.0", "react@^17.0.0", "react@>=15.0.0", "react@>=16", "react@17.0.2":
+"react@*", "react@^16.0.0 || ^17.0.0", "react@^16.8.0 || ^17.0.0", "react@^17.0.0", "react@>=15.0.0", "react@>=15.3.1", "react@17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"

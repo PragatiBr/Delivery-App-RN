@@ -10,7 +10,7 @@ class HomeHeader extends Component {
         <View style={headerContainer}>
           <Image
             source={{ uri: 'https://media-exp1.licdn.com/dms/image/C510BAQFFEDwhEhH1nw/company-logo_200_200/0/1542181185790?e=2159024400&v=beta&t=-fCrx1xapE6g1VkcFEFGLHFUrkY_cHvKDiumjeOzKKE' }}
-            style={{ height: 50, width: 100 }}
+            style={{ height: 60, width: 100 }}
           />
           <Icon name="shopping-cart" size={30} style={iconStyle} />
         </View>
@@ -29,11 +29,6 @@ class HomeHeader extends Component {
 }
 
 const styles = StyleSheet.create({
-  imageStyle: {
-    width: 70,
-    height: 70,
-    borderRadius: 80 / 2,
-  },
   itemViewStyle: {
     marginTop: 10,
     justifyContent: 'space-between',

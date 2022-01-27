@@ -1,43 +1,43 @@
 import React, { Component } from "react";
 import { View, FlatList, StyleSheet, TouchableOpacity, Text, Image } from 'react-native';
 
-class CategoryItem extends Component {
+class Categories extends Component {
   state = {
     data: [
       {
         id: 1,
         name: "Burger",
-        amount: '$ 40',
+        amount: '\u20B940',
         image: require('../assets/images/burger.jpg')
       },
       {
         id: 2,
         name: "Pizza",
-        amount: '$ 20',
+        amount: '\u20B920',
         image: require("../assets/images/pizza.jpg")
       },
       {
         id: 3,
         name: "Sandwich",
-        amount: '$ 40',
+        amount: '\u20B940',
         image: require("../assets/images/sandwich.jpg")
       },
       {
         id: 4,
         name: "Thali",
-        amount: '$ 60',
+        amount: '\u20B960',
         image: require('../assets/images/thali.jpg')
       },
       {
         id: 5,
         name: "Pasta",
-        amount: '$ 50',
+        amount: '\u20B950',
         image: require('../assets/images/pasta.jpg')
       },
       {
         id: 6,
         name: "Noodles",
-        amount: '$ 60',
+        amount: '\u20B9cc60',
         image: require('../assets/images/noodles.jpg')
       }
     ]
@@ -46,7 +46,7 @@ class CategoryItem extends Component {
   renderItemComponent = (itemData) => {
     return (
       <View style={styles.itemViewStyle}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => this.props.onPress.navigate('Category')}>
           <Image source={itemData.item.image} style={styles.imageStyle} />
           <Text style={styles.itemTextStyle}>{itemData.item.name}</Text>
         </TouchableOpacity>
@@ -99,4 +99,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CategoryItem;
+export default Categories;

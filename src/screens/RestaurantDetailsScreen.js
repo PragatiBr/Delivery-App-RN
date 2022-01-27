@@ -14,19 +14,19 @@ export default class RestaurantDetailsScreen extends Component {
       {
         id: 1,
         name: "Pasta",
-        amount: '$ 40',
+        amount: '\u20B940',
         image: require('../assets/images/pasta.jpg')
       },
       {
         id: 2,
         name: "Pizza",
-        amount: '$ 20',
+        amount: '\u20B920',
         image: require("../assets/images/pizza.jpg")
       },
       {
         id: 3,
         name: "Sandwich",
-        amount: '$ 40',
+        amount: '\u20B940',
         image: require("../assets/images/sandwich.jpg")
       },
     ]
@@ -166,3 +166,6 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
 });
+
+
+//(Rupees symbol =\u20B9)

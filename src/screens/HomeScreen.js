@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { ScrollView, LogBox } from 'react-native';
-import CategoryItem from "../components/CategoryItem";
+import Categories from "../components/Categories";
 import HomeHeader from "../components/HomeHeader";
 import RestaurantList from "../components/RestaurantList";
 import SliderScreen from "../components/SliderScreen";
@@ -13,8 +13,8 @@ class HomeScreen extends Component {
     return (
       <ScrollView>
         <HomeHeader />
-        <CategoryItem />
-        <SliderScreen />
+        <Categories onPress={this.props.navigation} />
+        <SliderScreen onPress={this.props.navigation} />
         <RestaurantList onPress={this.props.navigation} />
       </ScrollView>
     );

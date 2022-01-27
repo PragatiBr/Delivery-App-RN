@@ -1,17 +1,13 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import Feather from 'react-native-vector-icons/Feather';
+import { Text, View, StyleSheet, Image } from 'react-native';
 
-const Header = ({ headerText, headerSubText, headerImage, iconName, onPress }) => {
+const Header = ({ headerText, headerSubText, headerImage }) => {
 
   const { textStyles, viewStyle, subTextStyle } = styles;
 
   return (
     <View style={viewStyle}>
-      <TouchableOpacity onPress={() => onPress.navigate('Login')}>
-        <Feather name={iconName} size={30} color="black"  />
-      </TouchableOpacity>
       <Image source={{ uri:headerImage }} style={styles.imageStyle} />
       <Text style={textStyles}>{headerText}</Text>
       <Text style={subTextStyle}>{headerSubText}</Text>
@@ -30,7 +26,7 @@ const styles = StyleSheet.create({
     justifyContent:'flex-start',
     backgroundColor: 'white',
     alignItems:'flex-start',
-    height:200,
+    height:180,
     paddingTop:20,
     paddingLeft: 20,
     shadowColor:'#000',
@@ -38,7 +34,7 @@ const styles = StyleSheet.create({
     shadowOpacity:0.2,
   },
   imageStyle:{
-    height: 50,
+    height: 70,
     width: 180,
   },
   subTextStyle:{

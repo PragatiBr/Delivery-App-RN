@@ -11,7 +11,7 @@ class RestaurantList extends Component {
         resName: 'Joe\'s Brunch',
         resImg: require('../assets/images/joesbrunch.png'),
         rating: '4.3',
-        amount: '$30 For Two',
+        amount: '\u20B930 For Two',
         time: '20 mins'
       },
       {
@@ -19,7 +19,7 @@ class RestaurantList extends Component {
         resName: 'The London Tavern',
         resImg: require('../assets/images/The-London.png'),
         rating: '4.3',
-        amount: '$30 For Two',
+        amount: '\u20B930 For Two',
         time: '20 mins'
       },
       {
@@ -27,7 +27,7 @@ class RestaurantList extends Component {
         resName: 'Beyond India',
         resImg: require('../assets/images/beyond-india.png'),
         rating: '4.5',
-        amount: '$30 For Two',
+        amount: '\u20B930 For Two',
         time: '20 mins'
       },
       {
@@ -35,7 +35,7 @@ class RestaurantList extends Component {
         resName: 'Feather Hotel',
         resImg: require('../assets/images/feather-hotel.png'),
         rating: '4.1',
-        amount: '$30 For Two',
+        amount: '\u20B930 For Two',
         time: '20 mins'
       },
       {
@@ -43,7 +43,7 @@ class RestaurantList extends Component {
         resName: 'Rezz Hotel',
         resImg: require('../assets/images/rezz-hotel.png'),
         rating: '4.0',
-        amount: '$30 For Two',
+        amount: '\u20B930 For Two',
         time: '20 mins'
       },
     ]

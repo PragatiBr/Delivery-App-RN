@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, SectionList, Image, TouchableOpacity, LogBox } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
+import Snackbar from "react-native-snackbar-component";
+import RCTModalHostViewNativeComponent from "react-native/Libraries/Modal/RCTModalHostViewNativeComponent";
 
 const pizzaSection = [
   {
@@ -11,35 +13,35 @@ const pizzaSection = [
         id: 1,
         image: require('../assets/images/cheese-pizza.jpg'),
         description: 'Epic combination of signature pan crust, delicious paneer & veg momos topped with',
-        amount: '$ 100',
+        amount: '\u20B9100',
       },
       {
         name: 'Peppy Paneer Pizza',
         id: 2,
         image: require('../assets/images/peppy-paneer-pizza.jpg'),
         description: 'Epic combination of signature pan crust, delicious paneer & veg momos topped with',
-        amount: '$ 120',
+        amount: '\u20B9120',
       },
       {
         name: 'Margherit Pizza',
         id: 3,
         image: require('../assets/images/Margarita.png'),
         description: 'Epic combination of signature pan crust, delicious paneer & veg momos topped with',
-        amount: '$ 150',
+        amount: '\u20B9150',
       },
       {
         name: 'Pepperoni Pizza',
         id: 4,
         image: require('../assets/images/pepperoni-pizza.jpg'),
         description: 'Epic combination of signature pan crust, delicious paneer & veg momos topped with',
-        amount: '$ 180',
+        amount: '\u20B9180',
       },
       {
         name: 'Veggie Pizza',
         id: 5,
         image: require('../assets/images/veggie-pizza.jpg'),
         description: 'Epic combination of signature pan crust, delicious paneer & veg momos topped with',
-        amount: '$ 120',
+        amount: '\u20B9120',
       },
     ],
   }
@@ -54,14 +56,14 @@ const pastaSection = [
         id: 6,
         image: require('../assets/images/red-sause-pasta.jpg'),
         description: 'Epic combination of signature pan crust, delicious paneer & veg momos topped with',
-        amount: '$ 120',
+        amount: '\u20B9120',
       },
       {
         name: 'White Sause Pasta',
         id: 7,
         image: require('../assets/images/white-sause-pasta.jpg'),
         description: 'Epic combination of signature pan crust, delicious paneer & veg momos topped with',
-        amount: '$ 120',
+        amount: '\u20B9120',
       },
     ],
   },
@@ -76,14 +78,14 @@ const snacksSection = [
         id: 8,
         image: require('../assets/images/stuffed-garlic-bread.jpg'),
         description: 'Epic combination of signature pan crust, delicious paneer & veg momos topped with',
-        amount: '$ 120',
+        amount: '\u20B9120',
       },
       {
         name: 'French Fries',
         id: 9,
         image: require('../assets/images/french-fries.jpg'),
         description: 'Epic combination of signature pan crust, delicious paneer & veg momos topped with',
-        amount: '$ 120',
+        amount: '\u20B9120',
       },
     ],
   },
@@ -98,31 +100,34 @@ const dessertsSection = [
         id: 10,
         image: require('../assets/images/gulab-jamun.jpg'),
         description: 'Epic combination of signature pan crust, delicious paneer & veg momos topped with',
-        amount: '$ 60',
+        amount: '\u20B960',
       },
       {
         name: 'Rasmalai',
         id: 11,
         image: require('../assets/images/rasmalai.jpg'),
         description: 'Epic combination of signature pan crust, delicious paneer & veg momos topped with',
-        amount: '$ 99',
+        amount: '\u20B999',
       },
       {
         name: 'Ice - Cream',
         id: 12,
         image: require('../assets/images/ice-cream.jpg'),
         description: 'Epic combination of signature pan crust, delicious paneer & veg momos topped with',
-        amount: '$ 100',
+        amount: '\u20B9100',
       },
     ],
   }
 ];
+
 
 export default class RestaurantMenu extends Component {
 
   componentDidMount() {
     LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
   }
+
+  state = { showSnackBar: false };
   
   renderItems = (itemData) => {
     return (
@@ -133,10 +138,11 @@ export default class RestaurantMenu extends Component {
             <Text numberOfLines={2} ellipsizeMode="tail">{itemData.item.description}</Text>
             <Text>{itemData.item.amount}</Text>
           </View>
-        <Button />
+        <Button onPress={this.setState({ showSnackBar: true })} />
       </View>
     );
   }
+
 
   render() {
     const { containerStyle, textStyle, sectionTitleStyle } = styles;
@@ -150,19 +156,26 @@ export default class RestaurantMenu extends Component {
             renderSectionHeader={({ section: { title } }) => (
               <Text style={sectionTitleStyle}>{title}</Text>
             )}
+          />
+          <Snackbar 
+            visible={this.state.showSnackBar} 
+            textMessage="Hello There!" 
+            actionHandler={()=>{console.log("snackbar button clicked!")}} 
+            actionText="let's go"
           /> 
       </View>
     );
   }
 }
 
-const Button = () => {
+
+const Button = ({ onPress }) => {
   return (
     <View style={styles.buttonViewStyle}>
       <TouchableOpacity>
         <Icon name="minus" size={20} style={{ color: 'black' }} />
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={onPress}>
         <Icon name="plus" size={20} style={{ color: 'black' }} />
       </TouchableOpacity>
     </View>

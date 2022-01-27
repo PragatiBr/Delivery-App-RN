@@ -30,7 +30,7 @@ class SliderScreen extends Component {
         <SliderBox
           images={this.state.images}
           sliderBoxHeight={180}
-          //onCurrentImagePressed={index => console.warn(`image ${index} pressed`)}
+          onCurrentImagePressed={() => this.props.onPress.navigate("Category")}
           dotColor="slateblue"
           inactiveDotColor="#90A4AE"
           paginationBoxVerticalPadding={10}

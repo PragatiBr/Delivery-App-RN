@@ -31,7 +31,10 @@ class LoginForm extends Component {
             style={styles.inputStyle}
             placeholder="user@gmail.com"
             value={this.state.email}
-            onChangeText={email => this.setState({ email })} 
+            onChangeText={email => this.setState({ email })}
+            autoCapitalize="none"
+            autoCorrect={false} 
+            keyboardType="email-address"
           />
           <Text style={styles.textStyle}>Password</Text>
           <TextInput 
@@ -39,7 +42,10 @@ class LoginForm extends Component {
             secureTextEntry
             placeholder="password"
             value={this.state.password}
-            onChangeText={password => this.setState({ password })} 
+            onChangeText={password => this.setState({ password })}
+            autoCapitalize="none"
+            autoCorrect={false} 
+            keyboardType="email-address"
           />
           <Text>{this.state.error}</Text>
         </View>
@@ -75,9 +81,8 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 20,
     backgroundColor: 'lightsteelblue',
-    lineHeight: 5,
     fontSize: 15,
-    paddingLeft:10,
+    padding:10,
   },
   buttonViewStyle: {
     marginTop: 25,
@@ -103,7 +108,7 @@ const styles = StyleSheet.create({
   errorTextStyle:{
     fontSize:16,
     color:'red',
-  }
+  },
 });
 
 export default LoginForm;

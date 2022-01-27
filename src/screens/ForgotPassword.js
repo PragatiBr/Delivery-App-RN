@@ -19,11 +19,9 @@ class ForgotPassword extends Component {
   render(){
     return (
       <View style={{ backgroundColor: 'lightgrey ', flex: 1 }}>
-        <Header
-          iconName="chevron-left" 
+        <Header 
           headerText="FORGOT PASSWORD"  
-          headerImage="https://media-exp1.licdn.com/dms/image/C510BAQFFEDwhEhH1nw/company-logo_200_200/0/1542181185790?e=2159024400&v=beta&t=-fCrx1xapE6g1VkcFEFGLHFUrkY_cHvKDiumjeOzKKE"
-          onPress={this.props.navigation} 
+          headerImage="https://media-exp1.licdn.com/dms/image/C510BAQFFEDwhEhH1nw/company-logo_200_200/0/1542181185790?e=2159024400&v=beta&t=-fCrx1xapE6g1VkcFEFGLHFUrkY_cHvKDiumjeOzKKE" 
         />
         <View style={styles.containerStyle}>
           <Text style={styles.textStyle}>Email</Text>
@@ -58,15 +56,15 @@ const styles = StyleSheet.create({
     color: 'black'
   },
   inputStyle: {
-    height: 50,
+    height: 40,
     marginTop: 10,
     backgroundColor: 'lightsteelblue',
-    lineHeight: 5,
     fontSize: 15,
-    paddingLeft:10,
+    padding:10,
   },
   buttonViewStyle: {
     height:50,
+    marginTop: 20,
   },
   footerView: {
     alignItems:'center',
